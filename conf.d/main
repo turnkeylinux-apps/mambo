@@ -87,6 +87,11 @@ cat >>$WEBROOT/includes/footer.php<<EOF
 <div id="turnkey-credit" style="text-align:center;padding-top:20px;"><a href="http://www.turnkeylinux.org/mambo">Mambo Appliance</a> - Powered by <a href="http://www.turnkeylinux.org">TurnKey Linux</a></div>
 EOF
 
+# convenience and cleanup
+ln -s $WEBROOT/administrator $WEBROOT/admin
+rm -f $WEBROOT/htaccess.txt.45x
+rm -f $WEBROOT/configuration.sample.php
+
 # stop services
 /etc/init.d/mysql stop
 /etc/init.d/apache2 stop
