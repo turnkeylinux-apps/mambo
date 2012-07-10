@@ -75,6 +75,13 @@ $CURL "${URL}/install4.php" --data "$NEXT&$DBCONF&DBcreated=1&sitename=TurnKey+M
 rm -rf $WEBROOT/installation
 rm -f /tmp/cookie
 
+# blank out hardcoded site url, set mailer to smtp and enable sef
+CONF=$WEBROOT/configuration.php
+sed -i "s|mosConfig_live_site =.*|mosConfig_live_site = '';|" $CONF
+sed -i "s|mosConfig_mailer =.*|mosConfig_mailer = 'smtp';|" $CONF
+sed -i "s|mosConfig_sef =.*|mosConfig_sef = '1';|" $CONF
+mv $WEBROOT/htaccess.txt $WEBROOT/.htaccess
+
 # stop services
 /etc/init.d/mysql stop
 /etc/init.d/apache2 stop
