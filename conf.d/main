@@ -30,3 +30,9 @@ chown -R www-data:www-data $WEBROOT/uploadfiles
 chown -R www-data:www-data $WEBROOT/administrator
 chown www-data:www-data $WEBROOT/installation/langconfig.php
 
+# apply patches to support php 5.3
+PATCHES=$SRC/patches
+patch $WEBROOT/includes/database.php $PATCHES/php53_database.diff
+patch $WEBROOT/includes/Cache/Lite/Function.php $PATCHES/php53_cache.diff
+rm -rf $PATCHES
+

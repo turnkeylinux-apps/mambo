@@ -1,0 +1,15 @@
+--- Cache/Lite/Function.php.orig	2012-07-10 09:55:32.000000000 +0000
++++ Cache/Lite/Function.php	2012-07-10 09:56:13.000000000 +0000
+@@ -72,6 +72,12 @@
+     function call()
+     {
+         $arguments = func_get_args();
++        $numargs = func_num_args(); 
++
++        for($i=1; $i < $numargs; $i++){ 
++            $arguments[$i] = &$arguments[$i]; 
++        }  
++
+         $id = serialize($arguments); // Generate a cache id
+         if (!$this->_fileNameProtection) {
+             $id = md5($id);

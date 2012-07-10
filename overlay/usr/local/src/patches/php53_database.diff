@@ -1,0 +1,13 @@
+--- database.php.orig	2012-07-10 09:53:53.000000000 +0000
++++ database.php	2012-07-10 09:54:59.000000000 +0000
+@@ -784,6 +784,10 @@
+ 	/** @var mosDatabase Database connector */
+ 	var $_db = null;
+ 
++        function mosDBTable ($table='', $keyname='id', $db='') { 
++            $this->mosDBAbstractRow($table, $keyname, $db); 
++        } 
++
+ 	/**
+ 	 *	@return bool True if DB query failed.  Sets the error message
+ 	 */
