@@ -36,3 +36,8 @@ patch $WEBROOT/includes/database.php $PATCHES/php53_database.diff
 patch $WEBROOT/includes/Cache/Lite/Function.php $PATCHES/php53_cache.diff
 rm -rf $PATCHES
 
+# configure apache
+a2dissite default
+a2ensite mambo
+a2enmod rewrite
+
