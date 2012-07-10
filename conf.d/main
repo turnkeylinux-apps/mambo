@@ -11,3 +11,22 @@ ADMIN_MAIL=admin@example.com
 SRC=/usr/local/src
 WEBROOT=/var/www/mambo
 
+# unpack and set permissions
+mkdir -p $WEBROOT
+tar -zxf $SRC/Mambo*.tar.gz -C $WEBROOT
+rm $SRC/Mambo*.tar.gz
+chown -R root:root $WEBROOT
+find $WEBROOT -type f -print0 | xargs -0 chmod 644
+find $WEBROOT -type d -print0 | xargs -0 chmod 755
+chown -R www-data:www-data $WEBROOT/cache
+chown -R www-data:www-data $WEBROOT/media
+chown -R www-data:www-data $WEBROOT/images
+chown -R www-data:www-data $WEBROOT/modules
+chown -R www-data:www-data $WEBROOT/mambots
+chown -R www-data:www-data $WEBROOT/language
+chown -R www-data:www-data $WEBROOT/templates
+chown -R www-data:www-data $WEBROOT/components
+chown -R www-data:www-data $WEBROOT/uploadfiles
+chown -R www-data:www-data $WEBROOT/administrator
+chown www-data:www-data $WEBROOT/installation/langconfig.php
+
