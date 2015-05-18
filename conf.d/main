@@ -40,7 +40,7 @@ rm -rf $PATCHES
 sed -i "s|TYPE=MyISAM|ENGINE=MyISAM|g" $WEBROOT/installation/sql/mambo.sql
 
 # configure apache
-a2dissite default
+a2dissite 000-default
 a2ensite mambo
 a2enmod rewrite
 
