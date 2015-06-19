@@ -1,3 +1,10 @@
+turnkey-mambo-14.0 (1) turnkey; urgency=low
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 19 Jun 2015 12:42:21 +1000
+
 turnkey-mambo-13.0 (1) turnkey; urgency=low
 
   * Mambo:
