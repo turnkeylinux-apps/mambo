@@ -87,7 +87,7 @@ mv $WEBROOT/htaccess.txt $WEBROOT/.htaccess
 
 # tweak footer
 cat >>$WEBROOT/includes/footer.php<<EOF
-<div id="turnkey-credit" style="text-align:center;padding-top:20px;"><a href="http://www.turnkeylinux.org/mambo">Mambo Appliance</a> - Powered by <a href="http://www.turnkeylinux.org">TurnKey Linux</a></div>
+<div id="turnkey-credit" style="text-align:center;padding-top:20px;"><a href="https://www.turnkeylinux.org/mambo">Mambo Appliance</a> - Powered by <a href="https://www.turnkeylinux.org">TurnKey Linux</a></div>
 EOF
 
 # convenience and cleanup
